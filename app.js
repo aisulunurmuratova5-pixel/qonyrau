@@ -4,6 +4,8 @@ const MIN = 60 * 1000;        // бір минут (миллисекунд)
 const HOUR = 60 * MIN;        // бір сағат
 const DAY = 24 * HOUR;        // бір тәулік
 const LS_KEY = 'qonyrau-demo-v1';   // localStorage-тағы кілт
+
+// Иконкалар: әр иконканың SVG суреті
 const I = {
   bell:'<path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/>',
   grid:'<rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/>',
@@ -109,7 +111,7 @@ const T = {
   demoNote:'Демо-нұсқа: деректер тек осы браузерде сақталады. Рөлді ауыстырып, жүйені үш жақтан көріңіз.',
   saveFail:'Сақтау мүмкін болмады: браузер жады толы. Үлкен суреттерді азайтып көріңіз.',
   just:'қазір', minAgo:'{n} мин бұрын', hAgo:'{n} сағ бұрын', yesterday:'кеше',
-  mother:'анасы', father:'әкесі', comments:'пікір', you:'Сіз', today:'Бүгін', lang:'Тіл'
+  mother:'анасы', father:'әкесі', comments:'пікір', you:'Сіз', today:'Бүгін', lang:'Тіл', brand:'Қоңырау'
  },
  ru:{
   tagline:'Мост между школой и семьёй',
@@ -168,7 +170,66 @@ const T = {
   demoNote:'Демо-версия: данные хранятся только в этом браузере. Переключайте роли, чтобы увидеть систему с трёх сторон.',
   saveFail:'Не удалось сохранить: память браузера заполнена. Попробуйте уменьшить фото.',
   just:'только что', minAgo:'{n} мин назад', hAgo:'{n} ч назад', yesterday:'вчера',
-  mother:'мама', father:'папа', comments:'комм.', you:'Вы', today:'Сегодня', lang:'Язык'
+  mother:'мама', father:'папа', comments:'комм.', you:'Вы', today:'Сегодня', lang:'Язык', brand:'Қоңырау'
+ },
+ en:{
+  tagline:'A bridge between school and family',
+  role_teacher:'Teacher', role_parent:'Parent', role_student:'Student',
+  as_parent:'Child', as_student:'Student',
+  nav_class:'Class', nav_feed:'Class feed', nav_portfolio:'Portfolio', nav_assignments:'Assignments',
+  nav_attendance:'Attendance', nav_messages:'Messages', nav_reports:'Reports', nav_home:'Home',
+  nav_myday:'My day', nav_report:'Progress',
+  last7:'last 7 days', goal:'Class goal', goalOf:'{a} / {b} points',
+  whole:'Whole class', random:'Random student', multi:'Select several', multiDone:'Stop selecting',
+  selected:'Selected: {n}', give:'Give points', tabPos:'Praise', tabNeg:'Needs work',
+  note:'Note (optional)', notePh:'For example: explained the code to the group',
+  recent:'Recent points', noRecent:'No points yet', undo:'Undo', undone:'Undone',
+  absentTag:'Absent', lateTag:'Late', sortName:'By name', sortPts:'By points',
+  again:'Pick again', close:'Close', studentsN:'{n} students', pts:'points', ptsShort:'pts',
+  awardedToast:'{who}: {v} · {skill}', awardedMany:'{n} students: {v} · {skill}',
+  postPh:'What is new in class? Share with parents…', addPhoto:'Add photo', removePhoto:'Remove photo',
+  publish:'Publish', published:'Post published', like:'Like', commentPh:'Write a comment…', send:'Send',
+  needText:'Write some text or add a photo',
+  pending:'Waiting for review', approved:'Published', returned:'Returned for changes',
+  pfPending:'To review', pfAll:'All work', allStudents:'All students',
+  approve:'Approve', returnBtn:'Return for changes', fbPh:'Write feedback for the student…', teacherFb:'Teacher feedback',
+  approvedToast:'Work approved and visible to parents', returnedToast:'Work returned for changes',
+  addWork:'Add work', workTitle:'Title', workTitlePh:'For example: my Scratch game',
+  type_image:'Photo', type_text:'Text', type_code:'Code', type_link:'Link',
+  chooseFile:'Choose an image', textPh:'Write your work here…', codePh:'# Paste your Python code', linkPh:'https://scratch.mit.edu/projects/…',
+  submitWork:'Send to teacher', workSent:'Work sent to the teacher', resubmit:'Fix and send again',
+  emptyPf:'No work yet', emptyPending:'All work has been reviewed', needTitle:'Add a title', needContent:'Add the content of your work',
+  myWorks:'My work', childWorks:'Work: {name}', pfHintParent:'You only see work approved by the teacher.',
+  asgNew:'New assignment', asgTitle:'Topic', asgDesc:'Description', asgDue:'Due date', create:'Create', asgCreated:'Assignment created',
+  dueOn:'Due: {d}', overdue:'Overdue', submittedN:'{a}/{b} submitted', gradedN:'{n} graded',
+  st_none:'Not submitted', st_submitted:'Submitted', st_graded:'Graded',
+  answer:'Answer', answerPh:'Write your answer or a link to your project…', submit:'Submit', submitted:'Assignment submitted',
+  grade:'Grade', save:'Save', gradeSaved:'Grade saved', fbShort:'Feedback', student:'Student', status:'Status',
+  attTitle:'Attendance', present:'Present', late:'Late', absent:'Absent', allPresent:'Everyone is present',
+  notMarked:'Not marked', date:'Date',
+  autoAbsent:'Tell parents automatically when a student is absent',
+  autoAbsentMsg:'Hello! {name} was not at the informatics lesson today ({date}). If you know the reason, please let me know.',
+  notifiedParent:'Message sent to the parents of {name}',
+  broadcast:'All parents', broadcastTitle:'Announcement to all parents', broadcastSent:'Sent to {n} parents',
+  msgPh:'Write a message…', noMsgs:'No messages yet. Write first.', pickThread:'Choose a conversation',
+  back:'Back', tpl1:'Did great work in class today!', tpl2:'Please check the homework.', tpl3:'Do you have time for a short talk?',
+  tplP1:'Thank you!', tplP2:'Cannot come to the lesson today.', tplP3:'When is a good time to talk?',
+  teacherRole:'Informatics teacher',
+  reportFor:'Report for', ptsWeek:'Points · 7 days', posShare:'Positive', attRate:'Attendance', asgDone:'Assignments', avgGrade:'Average grade',
+  byDay:'Points by day', bySkill:'By skill', studentsTable:'Students', nameCol:'Name',
+  posL:'Praise', negL:'Needs work', noData:'No data',
+  hello:'Hello, {name}!', helloStudent:'Hi, {name}!',
+  todayAtt:'Today at school', todayFeed:'Points today', noToday:'No points yet today',
+  upcoming:'Assignments', latestPost:'Class news', openFeed:'Open feed', allWorks:'See all',
+  myFeedback:'Latest teacher feedback', toDo:'To do', classGoalHint:'The whole class collects together',
+  notifs:'Notifications', noNotifs:'No new notifications',
+  n_post:'The teacher added a post to the feed', n_pfApproved:'“{title}” was published in the portfolio', n_pfReturned:'“{title}” was returned for changes',
+  n_graded:'“{title}”: grade {g}/10', n_msg:'{name}: new message', n_pfPending:'{name} sent new work', n_sub:'{name} submitted “{title}”',
+  resetDemo:'Reset demo data', resetConfirm:'Yes, reset everything', resetDone:'Demo data has been reset',
+  demoNote:'Demo version: data is saved only in this browser. Switch roles to see the system from three sides.',
+  saveFail:'Could not save: browser storage is full. Try a smaller photo.',
+  just:'just now', minAgo:'{n} min ago', hAgo:'{n} h ago', yesterday:'yesterday',
+  mother:'mother', father:'father', comments:'comments', you:'You', today:'Today', lang:'Language', brand:'Qonyrau'
  }
 };
 
@@ -178,16 +239,16 @@ const T = {
    ========================================================= */
 
 const SKILLS = [
-  {id:'active', kk:'Белсенділік', ru:'Активность', v:1, ic:'zap'},
-  {id:'help', kk:'Досына көмек', ru:'Помог другу', v:1, ic:'heart'},
-  {id:'task', kk:'Тапсырманы орындады', ru:'Выполнил задание', v:1, ic:'check'},
-  {id:'creative', kk:'Шығармашылық', ru:'Креативность', v:2, ic:'bulb'},
-  {id:'team', kk:'Топтық жұмыс', ru:'Работа в команде', v:1, ic:'users'},
-  {id:'grit', kk:'Табандылық', ru:'Упорство', v:1, ic:'mountain'},
-  {id:'phone', kk:'Сабақта телефон', ru:'Телефон на уроке', v:-1, ic:'phone'},
-  {id:'late', kk:'Кешігу', ru:'Опоздание', v:-1, ic:'clock'},
-  {id:'nohw', kk:'Үй жұмысы жоқ', ru:'Нет домашки', v:-1, ic:'bookx'},
-  {id:'noise', kk:'Сабаққа кедергі', ru:'Мешает уроку', v:-1, ic:'mega'}
+  {id:'active', kk:'Белсенділік', ru:'Активность', en:'Active in class', v:1, ic:'zap'},
+  {id:'help', kk:'Досына көмек', ru:'Помог другу', en:'Helped a friend', v:1, ic:'heart'},
+  {id:'task', kk:'Тапсырманы орындады', ru:'Выполнил задание', en:'Completed the task', v:1, ic:'check'},
+  {id:'creative', kk:'Шығармашылық', ru:'Креативность', en:'Creativity', v:2, ic:'bulb'},
+  {id:'team', kk:'Топтық жұмыс', ru:'Работа в команде', en:'Teamwork', v:1, ic:'users'},
+  {id:'grit', kk:'Табандылық', ru:'Упорство', en:'Perseverance', v:1, ic:'mountain'},
+  {id:'phone', kk:'Сабақта телефон', ru:'Телефон на уроке', en:'Phone in class', v:-1, ic:'phone'},
+  {id:'late', kk:'Кешігу', ru:'Опоздание', en:'Late', v:-1, ic:'clock'},
+  {id:'nohw', kk:'Үй жұмысы жоқ', ru:'Нет домашки', en:'No homework', v:-1, ic:'bookx'},
+  {id:'noise', kk:'Сабаққа кедергі', ru:'Мешает уроку', en:'Disturbed the lesson', v:-1, ic:'mega'}
 ];
 
 // skill('help') → «Досына көмек» дағдысы
@@ -243,6 +304,18 @@ function L(x) {
   return x[S.lang] || x.kk;
 }
 
+// tx('қазақша', 'по-русски', 'in English') — қазіргі тілдегі мәтінді таңдау
+function tx(kk, ru, en) {
+  if (S.lang === 'en') return en;
+  if (S.lang === 'ru') return ru;
+  return kk;
+}
+
+// Демо деректер (оқушы аттары, хабарламалар) ағылшынша ма?
+function isEnContent() {
+  return typeof S !== 'undefined' && S !== null && S.content === 'en';
+}
+
 // esc(): пайдаланушы жазған мәтінді HTML-ге қауіпсіз қою (< > белгілерін ауыстыру)
 function esc(text) {
   if (text === null || text === undefined) return '';
@@ -292,8 +365,11 @@ const KK_DAYS = ['жексенбі', 'дүйсенбі', 'сейсенбі', 'с
 const KK_DAYS_SHORT = ['Жс', 'Дс', 'Сс', 'Ср', 'Бс', 'Жм', 'Сб'];
 
 function fmt(ts, options) {
-  if (S.lang !== 'kk') {
+  if (S.lang === 'ru') {
     return new Date(ts).toLocaleString('ru-RU', options);
+  }
+  if (S.lang === 'en') {
+    return new Date(ts).toLocaleString('en-GB', options);
   }
   const d = new Date(ts);
   const month = KK_MONTHS[d.getMonth()];
@@ -341,6 +417,12 @@ function fullName(s) {
 }
 
 const TEACHER = { first: 'Айсұлу', last: 'Апай', color: '#C68A00' };
+
+// Мұғалімнің аты демо деректердің тіліне сәйкес болады
+function syncTeacher() {
+  TEACHER.first = isEnContent() ? 'Aisulu' : 'Айсұлу';
+  TEACHER.last = isEnContent() ? 'Apai' : 'Апай';
+}
 
 // Аватар: түсті шаршы ішінде аты-жөнінің бас әріптері
 function av(person, size = 40) {
@@ -399,17 +481,22 @@ function mazeSVG(variant) {
 }
 
 // Блок-схема суреті: «Шай демдеу алгоритмі»
-function flowSVG(){
+function flowSVG(en){
+  // en === true болса, блок-схемадағы жазулар ағылшынша
+  if (en === undefined) en = isEnContent();
+  const w = en
+    ? ['Start', 'Boil water', 'Is it boiling?', 'Wait 1 min', 'no', 'yes', 'Add tea and brew', 'End']
+    : ['Басы', 'Суды қайнату', 'Қайнады ма?', '1 мин күту', 'жоқ', 'иә', 'Шай салып, демдеу', 'Соңы'];
   const svg=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 300" font-family="Arial, sans-serif" font-size="13"><rect width="100%" height="100%" fill="#FFFDF5"/>
   <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10z" fill="#13213C"/></marker></defs>
   <g stroke="#13213C" stroke-width="2" fill="none" marker-end="url(#a)"><path d="M120 46v22"/><path d="M120 108v20"/><path d="M120 190v22"/><path d="M168 159h70"/><path d="M290 140V82H170"/></g>
-  <rect x="70" y="14" width="100" height="32" rx="16" fill="#D7F0E3" stroke="#13213C" stroke-width="2"/><text x="120" y="35" text-anchor="middle">Басы</text>
-  <rect x="50" y="70" width="140" height="38" fill="#DCEEF7" stroke="#13213C" stroke-width="2"/><text x="120" y="94" text-anchor="middle">Суды қайнату</text>
-  <path d="M120 130 168 159 120 188 72 159z" fill="#FFF1C7" stroke="#13213C" stroke-width="2"/><text x="120" y="163" text-anchor="middle">Қайнады ма?</text>
-  <rect x="240" y="140" width="100" height="38" fill="#FBE3DF" stroke="#13213C" stroke-width="2"/><text x="290" y="164" text-anchor="middle">1 мин күту</text>
-  <text x="200" y="152" fill="#C63A32">жоқ</text><text x="128" y="206" fill="#16855A">иә</text>
-  <rect x="50" y="214" width="140" height="38" fill="#DCEEF7" stroke="#13213C" stroke-width="2"/><text x="120" y="238" text-anchor="middle">Шай салып, демдеу</text>
-  <path d="M120 252v16" stroke="#13213C" stroke-width="2" marker-end="url(#a)"/><rect x="70" y="270" width="100" height="26" rx="13" fill="#D7F0E3" stroke="#13213C" stroke-width="2"/><text x="120" y="288" text-anchor="middle">Соңы</text></svg>`;
+  <rect x="70" y="14" width="100" height="32" rx="16" fill="#D7F0E3" stroke="#13213C" stroke-width="2"/><text x="120" y="35" text-anchor="middle">${w[0]}</text>
+  <rect x="50" y="70" width="140" height="38" fill="#DCEEF7" stroke="#13213C" stroke-width="2"/><text x="120" y="94" text-anchor="middle">${w[1]}</text>
+  <path d="M120 130 168 159 120 188 72 159z" fill="#FFF1C7" stroke="#13213C" stroke-width="2"/><text x="120" y="163" text-anchor="middle">${w[2]}</text>
+  <rect x="240" y="140" width="100" height="38" fill="#FBE3DF" stroke="#13213C" stroke-width="2"/><text x="290" y="164" text-anchor="middle">${w[3]}</text>
+  <text x="200" y="152" fill="#C63A32">${w[4]}</text><text x="128" y="206" fill="#16855A">${w[5]}</text>
+  <rect x="50" y="214" width="140" height="38" fill="#DCEEF7" stroke="#13213C" stroke-width="2"/><text x="120" y="238" text-anchor="middle">${w[6]}</text>
+  <path d="M120 252v16" stroke="#13213C" stroke-width="2" marker-end="url(#a)"/><rect x="70" y="270" width="100" height="26" rx="13" fill="#D7F0E3" stroke="#13213C" stroke-width="2"/><text x="120" y="288" text-anchor="middle">${w[7]}</text></svg>`;
   return 'data:image/svg+xml;utf8,'+encodeURIComponent(svg);
 }
 
@@ -428,11 +515,15 @@ function chance(p) {
   return Math.random() < p;
 }
 
-function seed() {
+function seed(lang) {
   const now = Date.now();
+  // Ағылшынша демо ма? (ENG тілі таңдалса)
+  const E = lang === 'en';
+  // pick('қазақша', 'English') — демо мәтінді тілге қарай таңдау
+  const pick = (kk, en) => (E ? en : kk);
 
   // ----- 1) Оқушылар: [аты, тегі, ата-анасы, m — анасы / f — әкесі] -----
-  const names = [
+  const namesKk = [
     ['Әлихан', 'Серікұлы', 'Гүлнар', 'm'], ['Аружан', 'Қайратқызы', 'Ерлан', 'f'],
     ['Дінмұхаммед', 'Асқарұлы', 'Сәуле', 'm'], ['Айым', 'Нұрланқызы', 'Динара', 'm'],
     ['Нұрасыл', 'Бауыржанұлы', 'Бауыржан', 'f'], ['Томирис', 'Ержанқызы', 'Ләззат', 'm'],
@@ -442,6 +533,17 @@ function seed() {
     ['Ақбота', 'Ерболқызы', 'Айгүл', 'm'], ['Елдос', 'Нұрлыбекұлы', 'Нұрлыбек', 'f'],
     ['Камила', 'Ринатқызы', 'Алия', 'm'], ['Бекзат', 'Қанатұлы', 'Қанат', 'f']
   ];
+  const namesEn = [
+    ['Alikhan', 'Serikuly', 'Gulnar', 'm'], ['Aruzhan', 'Kairatkyzy', 'Erlan', 'f'],
+    ['Dinmukhammed', 'Askaruly', 'Saule', 'm'], ['Aiym', 'Nurlankyzy', 'Dinara', 'm'],
+    ['Nurasyl', 'Bauyrzhanuly', 'Bauyrzhan', 'f'], ['Tomiris', 'Erzhankyzy', 'Lazzat', 'm'],
+    ['Ernur', 'Maratuly', 'Madina', 'm'], ['Inzhu', 'Samatkyzy', 'Samat', 'f'],
+    ['Arsen', 'Daurenuly', 'Assel', 'm'], ['Medina', 'Talgatkyzy', 'Talgat', 'f'],
+    ['Sanzhar', 'Galymuly', 'Zhanar', 'm'], ['Dariya', 'Armankyzy', 'Arman', 'f'],
+    ['Akbota', 'Erbolkyzy', 'Aigul', 'm'], ['Eldos', 'Nurlybekuly', 'Nurlybek', 'f'],
+    ['Kamila', 'Rinatkyzy', 'Aliya', 'm'], ['Bekzat', 'Kanatuly', 'Kanat', 'f']
+  ];
+  const names = E ? namesEn : namesKk;
   const colors = ['#2F6FD0', '#0E8F9C', '#D9682B', '#7656D6', '#C8406A', '#2E8B4F', '#A87212', '#4F5FBF'];
 
   const students = [];
@@ -471,8 +573,8 @@ function seed() {
       }
     });
   }
-  events.push({ id: uid(), sid: '1', skill: 'help', v: 1, ts: now - 80 * MIN, note: 'Ернұрға циклды түсіндіріп берді' });
-  events.push({ id: uid(), sid: '1', skill: 'creative', v: 2, ts: now - 50 * MIN, note: 'Лабиринтке өзі жаңа деңгей ойлап тапты' });
+  events.push({ id: uid(), sid: '1', skill: 'help', v: 1, ts: now - 80 * MIN, note: pick('Ернұрға циклды түсіндіріп берді', 'Explained loops to Ernur') });
+  events.push({ id: uid(), sid: '1', skill: 'creative', v: 2, ts: now - 50 * MIN, note: pick('Лабиринтке өзі жаңа деңгей ойлап тапты', 'Invented a new level for the maze') });
 
   // ----- 3) Қатысу: соңғы 10 күн -----
   const attendance = {};
@@ -514,10 +616,11 @@ function seed() {
 
   const a1 = {
     id: 'a1',
-    title: { kk: 'Scratch: лабиринт ойыны', ru: 'Scratch: игра-лабиринт' },
+    title: { kk: 'Scratch: лабиринт ойыны', ru: 'Scratch: игра-лабиринт', en: 'Scratch: maze game' },
     desc: {
       kk: 'Кейіпкер көрсеткі пернелерімен қозғалып, қабырғаға тигенде бастапқы орынға оралатын ойын жасаңдар. Жобаның сілтемесін жіберіңдер.',
-      ru: 'Сделайте игру, где герой двигается стрелками и возвращается на старт при касании стены. Пришлите ссылку на проект.'
+      ru: 'Сделайте игру, где герой двигается стрелками и возвращается на старт при касании стены. Пришлите ссылку на проект.',
+      en: 'Make a game where the hero moves with the arrow keys and goes back to the start when it touches a wall. Send the link to your project.'
     },
     due: startOfDay(now + 3 * DAY) + 18 * HOUR,
     created: now - 4 * DAY,
@@ -525,21 +628,23 @@ function seed() {
   };
   const a2 = {
     id: 'a2',
-    title: { kk: 'Блок-схема: шай демдеу алгоритмі', ru: 'Блок-схема: алгоритм заваривания чая' },
+    title: { kk: 'Блок-схема: шай демдеу алгоритмі', ru: 'Блок-схема: алгоритм заваривания чая', en: 'Flowchart: how to make tea' },
     desc: {
       kk: 'Шай демдеу алгоритмін блок-схема түрінде салыңдар. Кем дегенде бір тармақталу (шарт) болуы керек.',
-      ru: 'Нарисуйте алгоритм заваривания чая в виде блок-схемы. Должно быть хотя бы одно ветвление (условие).'
+      ru: 'Нарисуйте алгоритм заваривания чая в виде блок-схемы. Должно быть хотя бы одно ветвление (условие).',
+      en: 'Draw the algorithm for making tea as a flowchart. It must have at least one branch (condition).'
     },
     due: startOfDay(now - 2 * DAY) + 18 * HOUR,
     created: now - 9 * DAY,
-    subs: makeSubs(0.9, 0.85, 'Блок-схеманы дәптерге салып, суретке түсірдім.')
+    subs: makeSubs(0.9, 0.85, pick('Блок-схеманы дәптерге салып, суретке түсірдім.', 'I drew the flowchart in my notebook and took a photo.'))
   };
   const a3 = {
     id: 'a3',
-    title: { kk: 'Python: екі санның қосындысы', ru: 'Python: сумма двух чисел' },
+    title: { kk: 'Python: екі санның қосындысы', ru: 'Python: сумма двух чисел', en: 'Python: sum of two numbers' },
     desc: {
       kk: 'input() арқылы екі сан енгізіп, олардың қосындысын шығаратын бағдарлама жазыңдар.',
-      ru: 'Напишите программу, которая вводит два числа через input() и выводит их сумму.'
+      ru: 'Напишите программу, которая вводит два числа через input() и выводит их сумму.',
+      en: 'Write a program that reads two numbers with input() and prints their sum.'
     },
     due: startOfDay(now + 6 * DAY) + 18 * HOUR,
     created: now - 1 * DAY,
@@ -547,84 +652,88 @@ function seed() {
   };
   // 1-оқушының (Әлихан) жауаптары нақты
   a1.subs['1'] = { status: 'submitted', text: 'https://scratch.mit.edu/projects/1048576003/', ts: now - 5 * HOUR, grade: null, fb: '' };
-  a2.subs['1'] = { status: 'graded', text: 'Блок-схеманы портфолиоға да салдым.', ts: now - 3 * DAY, grade: 9, fb: 'Шарт блогы дұрыс, жарайсың!', gts: now - 30 * HOUR };
+  a2.subs['1'] = { status: 'graded', text: pick('Блок-схеманы портфолиоға да салдым.', 'I also added the flowchart to my portfolio.'), ts: now - 3 * DAY, grade: 9, fb: pick('Шарт блогы дұрыс, жарайсың!', 'The condition block is correct, well done!'), gts: now - 30 * HOUR };
   delete a3.subs['1'];
 
   // ----- 5) Портфолио -----
   const maze = mazeSVG(7);
   const portfolio = [
-    { id: uid(), sid: '1', title: 'Лабиринт ойыны — 1-деңгей', type: 'image', content: maze,
+    { id: uid(), sid: '1', title: pick('Лабиринт ойыны — 1-деңгей', 'Maze game — level 1'), type: 'image', content: maze,
       ts: now - 26 * HOUR, status: 'approved', ats: now - 24 * HOUR,
-      fb: 'Қабырғаларды өте мұқият салғансың, ойнау қызық!',
-      likes: ['p1'], comments: [{ by: 'p1', text: 'Үйде бәріміз ойнап көрдік 😊', ts: now - 20 * HOUR }] },
-    { id: uid(), sid: '1', title: 'Шай демдеу блок-схемасы', type: 'image', content: flowSVG(),
+      fb: pick('Қабырғаларды өте мұқият салғансың, ойнау қызық!', 'You drew the walls very carefully, it is fun to play!'),
+      likes: ['p1'], comments: [{ by: 'p1', text: pick('Үйде бәріміз ойнап көрдік 😊', 'We all played it at home 😊'), ts: now - 20 * HOUR }] },
+    { id: uid(), sid: '1', title: pick('Шай демдеу блок-схемасы', 'Flowchart: making tea'), type: 'image', content: flowSVG(E),
       ts: now - 3 * DAY, status: 'approved', ats: now - 2.8 * DAY,
-      fb: 'Шарт блогы дұрыс. Келесіде «Иә/Жоқ» тармақтарын көрсеткімен белгіле.', likes: [], comments: [] },
-    { id: uid(), sid: '1', title: 'Интернеттегі қауіпсіздік ережелері', type: 'text',
-      content: '1. Құпиясөзді ешкімге айтпаймын.\n2. Бейтаныс сілтемелерді ашпаймын.\n3. Жеке суреттерімді бөгде адамдарға жібермеймін.\n4. Бірдеңе қорқытса, ата-анама немесе мұғалімге айтамын.',
+      fb: pick('Шарт блогы дұрыс. Келесіде «Иә/Жоқ» тармақтарын көрсеткімен белгіле.', 'The condition block is correct. Next time, mark the “Yes/No” branches with arrows.'), likes: [], comments: [] },
+    { id: uid(), sid: '1', title: pick('Интернеттегі қауіпсіздік ережелері', 'Internet safety rules'), type: 'text',
+      content: pick('1. Құпиясөзді ешкімге айтпаймын.\n2. Бейтаныс сілтемелерді ашпаймын.\n3. Жеке суреттерімді бөгде адамдарға жібермеймін.\n4. Бірдеңе қорқытса, ата-анама немесе мұғалімге айтамын.', '1. I never tell anyone my password.\n2. I do not open links from strangers.\n3. I do not send my photos to people I do not know.\n4. If something scares me, I tell my parents or my teacher.'),
       ts: now - 2 * HOUR, status: 'pending', fb: '', likes: [], comments: [] },
-    { id: uid(), sid: '2', title: 'Сәлемдесу бағдарламасы', type: 'code',
-      content: 'name = input("Атың кім? ")\nprint("Сәлем,", name + "!")\nprint("Информатика сабағына қош келдің!")',
-      ts: now - 2 * DAY, status: 'approved', ats: now - 1.9 * DAY, fb: 'Тамаша! f-string қолданып көр.', likes: ['p2'], comments: [] },
-    { id: uid(), sid: '6', title: 'Менің Scratch жобам', type: 'link', content: 'https://scratch.mit.edu/projects/1048576117/',
+    { id: uid(), sid: '2', title: pick('Сәлемдесу бағдарламасы', 'Greeting program'), type: 'code',
+      content: pick('name = input("Атың кім? ")\nprint("Сәлем,", name + "!")\nprint("Информатика сабағына қош келдің!")', 'name = input("What is your name? ")\nprint("Hello,", name + "!")\nprint("Welcome to the informatics lesson!")'),
+      ts: now - 2 * DAY, status: 'approved', ats: now - 1.9 * DAY, fb: pick('Тамаша! f-string қолданып көр.', 'Great! Try using an f-string.'), likes: ['p2'], comments: [] },
+    { id: uid(), sid: '6', title: pick('Менің Scratch жобам', 'My Scratch project'), type: 'link', content: 'https://scratch.mit.edu/projects/1048576117/',
       ts: now - 5 * HOUR, status: 'pending', fb: '', likes: [], comments: [] },
-    { id: uid(), sid: '4', title: 'Компьютердің негізгі құрылғылары', type: 'text',
-      content: 'Компьютердің негізгі құрылғылары: процессор — ақпаратты өңдейді, жедел жады — уақытша сақтайды, қатты диск — ұзақ сақтайды. Енгізу құрылғылары: пернетақта, тінтуір. Шығару құрылғылары: монитор, принтер.',
+    { id: uid(), sid: '4', title: pick('Компьютердің негізгі құрылғылары', 'The main parts of a computer'), type: 'text',
+      content: pick('Компьютердің негізгі құрылғылары: процессор — ақпаратты өңдейді, жедел жады — уақытша сақтайды, қатты диск — ұзақ сақтайды. Енгізу құрылғылары: пернетақта, тінтуір. Шығару құрылғылары: монитор, принтер.', 'The main parts of a computer: the processor works with information, RAM keeps it for a short time, the hard drive keeps it for a long time. Input devices: keyboard, mouse. Output devices: monitor, printer.'),
       ts: now - 7 * HOUR, status: 'pending', fb: '', likes: [], comments: [] },
-    { id: uid(), sid: '3', title: 'Цикл: 1-ден 10-ға дейін', type: 'code', content: 'for i in range(1, 10):\n    print(i)',
+    { id: uid(), sid: '3', title: pick('Цикл: 1-ден 10-ға дейін', 'Loop: from 1 to 10'), type: 'code', content: 'for i in range(1, 10):\n    print(i)',
       ts: now - 30 * HOUR, status: 'returned', ats: now - 28 * HOUR,
-      fb: 'Бағдарлама 10 санын шығармай тұр. range() функциясының соңғы шекарасын тексер.', likes: [], comments: [] },
-    { id: uid(), sid: '9', title: 'Лабиринт: қиын деңгей', type: 'image', content: mazeSVG(31),
-      ts: now - 2 * DAY, status: 'approved', ats: now - 1.8 * DAY, fb: 'Жолдар өте шатасқан, керемет!', likes: ['p9'], comments: [] }
+      fb: pick('Бағдарлама 10 санын шығармай тұр. range() функциясының соңғы шекарасын тексер.', 'The program does not print 10. Check the end value of range().'), likes: [], comments: [] },
+    { id: uid(), sid: '9', title: pick('Лабиринт: қиын деңгей', 'Maze: hard level'), type: 'image', content: mazeSVG(31),
+      ts: now - 2 * DAY, status: 'approved', ats: now - 1.8 * DAY, fb: pick('Жолдар өте шатасқан, керемет!', 'The paths are really tricky, excellent!'), likes: ['p9'], comments: [] }
   ];
 
   // ----- 6) Сынып таспасы -----
   const posts = [
     { id: uid(), by: 't', ts: now - 2 * HOUR, img: maze,
       text: { kk: 'Бүгін 7 «А» сыныбы Scratch-та алғашқы лабиринт ойындарын жасады! Әр оқушы өз кейіпкерін бағдарламалап, кедергілер қосты. Жұмыстарды балаңыздың портфолиосынан көре аласыз.',
-              ru: 'Сегодня 7 «А» сделал первые игры-лабиринты в Scratch! Каждый ученик запрограммировал своего героя и добавил препятствия. Работы можно посмотреть в портфолио ребёнка.' },
+              ru: 'Сегодня 7 «А» сделал первые игры-лабиринты в Scratch! Каждый ученик запрограммировал своего героя и добавил препятствия. Работы можно посмотреть в портфолио ребёнка.',
+              en: 'Today class 7 “A” made their first maze games in Scratch! Every student programmed their own hero and added obstacles. You can see the work in your child’s portfolio.' },
       likes: ['p1', 'p2', 'p5', 'p9'],
       comments: [
-        { by: 'p1', text: 'Әлихан үйде де ойынын көрсетті, өте риза болдық!', ts: now - 90 * MIN },
-        { by: 'p9', text: 'Рахмет, апай! Арсен кешке дейін лабиринт салды.', ts: now - 40 * MIN }
+        { by: 'p1', text: pick('Әлихан үйде де ойынын көрсетті, өте риза болдық!', 'Alikhan showed us his game at home too, we are very happy!'), ts: now - 90 * MIN },
+        { by: 'p9', text: pick('Рахмет, апай! Арсен кешке дейін лабиринт салды.', 'Thank you! Arsen was building mazes all evening.'), ts: now - 40 * MIN }
       ] },
     { id: uid(), by: 't', ts: now - 26 * HOUR, img: null,
       text: { kk: 'Еске саламыз: бейсенбі күні 18:00-де информатика кабинетінде (214) ата-аналар жиналысы өтеді. Тақырып — балалардың цифрлық қауіпсіздігі.',
-              ru: 'Напоминаем: в четверг в 18:00 в кабинете информатики (214) пройдёт родительское собрание. Тема — цифровая безопасность детей.' },
+              ru: 'Напоминаем: в четверг в 18:00 в кабинете информатики (214) пройдёт родительское собрание. Тема — цифровая безопасность детей.',
+              en: 'A reminder: the parents’ meeting is on Thursday at 18:00 in the informatics room (214). Topic: children’s digital safety.' },
       likes: ['p3', 'p4', 'p12'],
-      comments: [{ by: 'p4', text: 'Міндетті түрде келемін.', ts: now - 24 * HOUR }] },
+      comments: [{ by: 'p4', text: pick('Міндетті түрде келемін.', 'I will definitely come.'), ts: now - 24 * HOUR }] },
     { id: uid(), by: 't', ts: now - 3 * DAY, img: null,
       text: { kk: 'Олимпиадаға дайындық үйірмесі сейсенбі мен жұма күндері 15:30-да. Python бойынша қосымша есептер портфолио бөліміне жүктеледі.',
-              ru: 'Кружок подготовки к олимпиаде — по вторникам и пятницам в 15:30. Дополнительные задачи по Python будут появляться в разделе портфолио.' },
+              ru: 'Кружок подготовки к олимпиаде — по вторникам и пятницам в 15:30. Дополнительные задачи по Python будут появляться в разделе портфолио.',
+              en: 'The olympiad club meets on Tuesdays and Fridays at 15:30. Extra Python tasks will appear in the portfolio section.' },
       likes: ['p6'], comments: [] }
   ];
 
   // ----- 7) Хабарламалар (кілт — оқушының id) -----
   const threads = {
     '1': [
-      { from: 't', text: 'Сәлеметсіз бе, Гүлнар! Әлихан бүгін топтағы досына циклды түсіндіріп, көп көмектесті. Тәрбиеңізге рахмет!', ts: now - 26 * HOUR, read: true },
-      { from: 'p', text: 'Рахмет, Айсұлу апай! Үйде де бағдарламалауға қызығып жүр.', ts: now - 25 * HOUR, read: true },
-      { from: 't', text: 'Бейсенбідегі жиналысқа келе аласыз ба? Әлиханның жобаларын көрсеткім келеді.', ts: now - 3 * HOUR, read: false }
+      { from: 't', text: pick('Сәлеметсіз бе, Гүлнар! Әлихан бүгін топтағы досына циклды түсіндіріп, көп көмектесті. Тәрбиеңізге рахмет!', 'Hello, Gulnar! Today Alikhan explained loops to a friend in his group and helped a lot. Thank you for raising him so well!'), ts: now - 26 * HOUR, read: true },
+      { from: 'p', text: pick('Рахмет, Айсұлу апай! Үйде де бағдарламалауға қызығып жүр.', 'Thank you, Ms. Aisulu! He is interested in programming at home too.'), ts: now - 25 * HOUR, read: true },
+      { from: 't', text: pick('Бейсенбідегі жиналысқа келе аласыз ба? Әлиханның жобаларын көрсеткім келеді.', 'Can you come to the meeting on Thursday? I would like to show you Alikhan’s projects.'), ts: now - 3 * HOUR, read: false }
     ],
     '2': [
-      { from: 'p', text: 'Айсұлу апай, сәлеметсіз бе. Аружан ертең дәрігерге барады, 2-сабаққа кешігіп келуі мүмкін.', ts: now - 50 * MIN, read: false }
+      { from: 'p', text: pick('Айсұлу апай, сәлеметсіз бе. Аружан ертең дәрігерге барады, 2-сабаққа кешігіп келуі мүмкін.', 'Hello, Ms. Aisulu. Aruzhan has a doctor’s appointment tomorrow, so she may be late for the 2nd lesson.'), ts: now - 50 * MIN, read: false }
     ],
     '5': [
-      { from: 't', text: 'Нұрасыл үй тапсырмасын екі рет тапсырмады. Қысқаша сөйлесіп алайық па?', ts: now - 2 * DAY, read: true },
-      { from: 'p', text: 'Иә, әрине. Сәрсенбі күні 16:00 сізге ыңғайлы ма?', ts: now - 2 * DAY + 3 * HOUR, read: false }
+      { from: 't', text: pick('Нұрасыл үй тапсырмасын екі рет тапсырмады. Қысқаша сөйлесіп алайық па?', 'Nurasyl has missed his homework twice. Can we have a short talk?'), ts: now - 2 * DAY, read: true },
+      { from: 'p', text: pick('Иә, әрине. Сәрсенбі күні 16:00 сізге ыңғайлы ма?', 'Yes, of course. Is Wednesday at 16:00 good for you?'), ts: now - 2 * DAY + 3 * HOUR, read: false }
     ]
   };
 
   // ----- Барлығын бір объектке жинаймыз -----
   return {
     v: 1,
-    lang: 'kk',
+    lang: E ? 'en' : 'kk',
+    content: E ? 'en' : 'kk',   // демо деректердің тілі
     role: 'teacher',
     acting: '1',       // ата-ана / оқушы ретінде кім ашып отыр
     cls: {
-      name: { kk: '7 «А» сынып · Информатика', ru: '7 «А» класс · Информатика' },
-      teacher: 'Айсұлу апай',
-      goal: { kk: 'Ғылым мұражайына саяхат', ru: 'Поездка в музей науки' },
+      name: { kk: '7 «А» сынып · Информатика', ru: '7 «А» класс · Информатика', en: 'Grade 7 “A” · Informatics' },
+      teacher: pick('Айсұлу апай', 'Ms. Aisulu'),
+      goal: { kk: 'Ғылым мұражайына саяхат', ru: 'Поездка в музей науки', en: 'Trip to the Science Museum' },
       target: 300
     },
     students: students,
@@ -634,7 +743,7 @@ function seed() {
     portfolio: portfolio,
     posts: posts,
     threads: threads,
-    calEvents: seedCal(),            // calendar-ai.js файлындағы функция
+    calEvents: seedCal(lang),            // calendar-ai.js файлындағы функция
     settings: { autoAbsent: true },
     absentNotified: {},
     seen: {},
@@ -647,9 +756,14 @@ function seed() {
    6. САҚТАУ ЖӘНЕ ЖҮКТЕУ (localStorage)
    ========================================================= */
 
-function load() {
+// Қазақша/орысша демо бір жерде, ағылшынша демо бөлек сақталады
+function dataKey(lang) {
+  return lang === 'en' ? LS_KEY + '-en' : LS_KEY;
+}
+
+function load(lang) {
   try {
-    const saved = localStorage.getItem(LS_KEY);
+    const saved = localStorage.getItem(dataKey(lang));
     if (saved) return JSON.parse(saved);
   } catch (e) {
     // localStorage жұмыс істемесе — жаңа деректермен бастаймыз
@@ -659,10 +773,35 @@ function load() {
 
 function save() {
   try {
-    localStorage.setItem(LS_KEY, JSON.stringify(S));
+    localStorage.setItem(dataKey(S.content === 'en' ? 'en' : 'kk'), JSON.stringify(S));
+    localStorage.setItem(LS_KEY + '-lang', S.lang);
   } catch (e) {
     toast(t('saveFail'));
   }
+}
+
+// Сайт ашылғанда қай тіл: сілтемедегі ?lang=en → соңғы таңдалған тіл → қазақша
+function startLang() {
+  const fromUrl = new URLSearchParams(location.search).get('lang');
+  if (['kk', 'ru', 'en'].includes(fromUrl)) return fromUrl;
+  try {
+    const saved = localStorage.getItem(LS_KEY + '-lang');
+    if (['kk', 'ru', 'en'].includes(saved)) return saved;
+  } catch (e) {}
+  return 'kk';
+}
+
+// Тілді ауыстыру: ағылшын тіліне өткенде ағылшынша демо сынып ашылады
+function switchLang(lang) {
+  const wantEn = lang === 'en';
+  if ((S.content === 'en') !== wantEn) {
+    save();
+    S = load(lang) || seed(lang);
+    if (!S.calEvents) S.calEvents = seedCal(lang);
+  }
+  S.lang = lang;
+  syncTeacher();
+  save();
 }
 
 
@@ -937,6 +1076,7 @@ function topbarHtml() {
       <div class="seg">
         <button class="${S.lang === 'kk' ? 'on' : ''}" data-act="lang" data-v="kk">ҚАЗ</button>
         <button class="${S.lang === 'ru' ? 'on' : ''}" data-act="lang" data-v="ru">РУС</button>
+        <button class="${S.lang === 'en' ? 'on' : ''}" data-act="lang" data-v="en">ENG</button>
       </div>
       <button class="icon-btn" data-act="bell" aria-label="${t('notifs')}">${icon('bell', 18)}${dot}</button>
     </header>`;
@@ -944,11 +1084,13 @@ function topbarHtml() {
 
 // Бүкіл бетті қайта салу. Деректер өзгерген сайын шақырылады.
 function render() {
+  syncTeacher();
   if (ui.screen === 'landing') {
     renderLanding();           // landing.js файлындағы бастапқы бет
     return;
   }
   document.documentElement.lang = S.lang;
+  document.title = t('brand') + ' — ' + t('tagline');
   const current = curView();
 
   document.getElementById('app').innerHTML = `
@@ -957,7 +1099,7 @@ function render() {
         <button class="brand" data-act="toLanding" title="${t('toSite')}">
           <span class="brand-mark masc">${mascot('happy', false)}</span>
           <span>
-            <span class="brand-name" style="display:block">Қоңырау</span>
+            <span class="brand-name" style="display:block">${t('brand')}</span>
             <span class="brand-sub" style="display:block">${t('tagline')}</span>
           </span>
         </button>
@@ -2267,8 +2409,9 @@ const A = {
   },
   // тілді ауыстыру
   lang(el) {
-    S.lang = el.dataset.v;
-    save();
+    switchLang(el.dataset.v);
+    ui.thread = null;
+    ui.modal = null;
     render();
   },
   // хабарландыруларды ашу / жабу
@@ -2466,7 +2609,7 @@ const A = {
       return;
     }
     const lang = S.lang;
-    S = seed();
+    S = seed(lang);
     S.lang = lang;
     ui.confirmReset = false;
     ui.view = null;
