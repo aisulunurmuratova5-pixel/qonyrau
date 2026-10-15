@@ -1,6 +1,4 @@
-/* =========================================================
-   LANDING — бастапқы бет (ClassDojo-style structure, own brand)
-   ========================================================= */
+
 Object.assign(T.kk, {
   lp_teachers:'Мұғалімдерге', lp_schools:'Мектептерге', lp_resources:'Ресурстар',
   lp_res1:'Мұғалімге арналған нұсқаулық', lp_res2:'Тәрбие сағатына идеялар', lp_res3:'Ата-аналарға кеңестер', lp_res4:'Мектеп басшыларына',
@@ -9,7 +7,7 @@ Object.assign(T.kk, {
   lp_h1_a:'Сыныпты бір ', lp_h1_em:'шаңырақ', lp_h1_b:' астына жинаңыз',
   lp_sub:'Мұғалім, оқушы және ата-ана бір кеңістікте: ұпайлар, портфолио, хабарламалар және сынып жаңалықтары. Мұғалімдер үшін әрқашан тегін.',
   lp_iam:'Мен…', lp_r_t:'Мұғаліммін', lp_r_p:'Ата-анамын', lp_r_s:'Оқушымын', lp_r_l:'Мектеп басшысымын',
-  lp_trust1:'Мұғалімдерге тегін', lp_trust2:'Қазақша және орысша', lp_trust3:'Жарнамасыз',
+  lp_trust1:'Мұғалімдерге тегін', lp_trust2:'Қазақша, орысша, ағылшынша', lp_trust3:'Жарнамасыз',
   lp_f2:'Рахмет, апай!', lp_f3:'Бүгін сабақта', lp_f3s:'Қатысу журналы',
   lp_strip_e:'Күнделікті сәттер', lp_strip_h:'Мұғалім, отбасы және бала — әрқашан байланыста',
   sc1:'Scratch: лабиринт ойыны', sc2:'Python үйірмесі', sc3:'Шығармашылық үшін', sc4:'Ата-анамен байланыс', sc5:'Ата-аналар жиналысы', sc6:'Сынып мақсаты орындалды!', sc7:'Блок-схема: шай демдеу', sc8:'Бүгінгі қатысу',
@@ -53,7 +51,7 @@ Object.assign(T.ru, {
   lp_h1_a:'Соберите класс под одним ', lp_h1_em:'шаныраком', lp_h1_b:'',
   lp_sub:'Учитель, ученики и родители в одном пространстве: баллы, портфолио, сообщения и новости класса. Для учителей — бесплатно навсегда.',
   lp_iam:'Я…', lp_r_t:'Учитель', lp_r_p:'Родитель', lp_r_s:'Ученик', lp_r_l:'Руководитель школы',
-  lp_trust1:'Бесплатно для учителей', lp_trust2:'На казахском и русском', lp_trust3:'Без рекламы',
+  lp_trust1:'Бесплатно для учителей', lp_trust2:'На казахском, русском и английском', lp_trust3:'Без рекламы',
   lp_f2:'Спасибо, апай!', lp_f3:'Сегодня на уроке', lp_f3s:'Журнал посещаемости',
   lp_strip_e:'Моменты каждого дня', lp_strip_h:'Учитель, семья и ребёнок — всегда на связи',
   sc1:'Scratch: игра-лабиринт', sc2:'Кружок Python', sc3:'За креативность', sc4:'Связь с родителями', sc5:'Родительское собрание', sc6:'Цель класса достигнута!', sc7:'Блок-схема: заварить чай', sc8:'Посещаемость сегодня',
@@ -90,6 +88,51 @@ Object.assign(T.ru, {
   su_note:'Демо-версия: вход без регистрации.', toSite:'На главную'
 });
 
+Object.assign(T.en, {
+  lp_teachers:'For teachers', lp_schools:'For schools', lp_resources:'Resources',
+  lp_res1:'Teacher guide', lp_res2:'Ideas for class time', lp_res3:'Tips for parents', lp_res4:'For school leaders',
+  lp_loginT:'Teacher login', lp_loginP:'Parent login', lp_signup:'Sign up', lp_menu:'Menu',
+  lp_kicker_b:'New', lp_kicker:'Class feed and portfolio in one place',
+  lp_h1_a:'Bring your class together under one ', lp_h1_em:'shanyrak', lp_h1_b:'',
+  lp_sub:'Teachers, students and parents in one place: points, portfolios, messages and class news. Always free for teachers.',
+  lp_iam:'I am a…', lp_r_t:'Teacher', lp_r_p:'Parent', lp_r_s:'Student', lp_r_l:'School leader',
+  lp_trust1:'Free for teachers', lp_trust2:'Kazakh, Russian and English', lp_trust3:'No ads',
+  lp_f2:'Thank you, teacher!', lp_f3:'In class today', lp_f3s:'Attendance',
+  lp_strip_e:'Everyday moments', lp_strip_h:'Teacher, family and child — always connected',
+  sc1:'Scratch: maze game', sc2:'Python club', sc3:'For creativity', sc4:'Talking with parents', sc5:'Parents’ meeting', sc6:'Class goal reached!', sc7:'Flowchart: making tea', sc8:'Attendance today',
+  lp_feat_e:'Features', lp_feat_h:'Tools that save a teacher’s time',
+  f1_h:'Talking with parents is easy', f1_p:'Write to any parent privately or send an announcement to the whole class with one button. Your personal phone number stays hidden.',
+  f1_t1:'Ready reply templates', f1_t2:'If a child misses a lesson, the parent gets a message automatically', f1_t3:'One announcement for all parents',
+  f2_h:'Show a day in your class', f2_p:'Share moments from the lesson with photos and text. Parents can like and comment. Only the families of your class can see the feed.',
+  f2_t1:'Photos and posts', f2_t2:'Likes and comments from parents', f2_t3:'A private class space',
+  f3_h:'Never forget meetings and deadlines', f3_p:'Assignment deadlines and parents’ meetings are in one calendar. Qonyrau reminds parents and students in advance.',
+  f3_t1:'Assignment deadlines', f3_t2:'Meetings and events', f3_t3:'Notifications',
+  f3_ev:'Parents’ meeting', f3_evs:'18:00 · Room 214',
+  f4_h:'Notice and praise good habits', f4_p:'Give points for being active, helping a friend and not giving up. Students add their work to the portfolio, and parents see it as soon as the teacher approves it.',
+  f4_t1:'Skills for praise and growth', f4_t2:'Work as photos, text, code and links', f4_t3:'A weekly report for parents',
+  f5_h:'A teacher’s helper in your pocket', f5_p:'Everything you need in the lesson is in one place. Taking attendance and giving grades takes only a few seconds.',
+  t_att:'Attendance', t_rand:'Random student', t_asg:'Assignments and grades', t_rep:'Reports and charts', t_timer:'Timer', t_groups:'Make groups', soon:'Soon',
+  lp_st_e:'For students', lp_st_h:'Reach the class goal together with Syngyr!',
+  lp_st_p:'Collect points, add your work to your portfolio and be the first to read the teacher’s feedback. The points the whole class collects together lead to a class trip.',
+  lp_st_btn:'Log in as a student',
+  lp_how_e:'How to start', lp_how_h:'Three steps — and your class is connected',
+  s1_h:'Create your class', s1_p:'Add your list of students or paste it from Excel. It takes less than a minute.',
+  s2_h:'Invite parents', s2_p:'Each family joins with a personal code or link. Each parent sees only their own child.',
+  s3_h:'Share every day', s3_p:'Give points, post photos from the lesson, send assignments. Parents learn the news right away.',
+  lp_pr_e:'Safety', lp_pr_h:'Children’s data stays inside the class', lp_pr_p:'Qonyrau puts the protection of children’s personal data first. We never use it for advertising.',
+  pr1_h:'No ads', pr1_p:'Data is never sold or used for advertising.',
+  pr2_h:'Only your child', pr2_p:'A parent sees only their own child’s points and work.',
+  pr3_h:'Private feed', pr3_p:'Only the families of the class can see its posts.',
+  pr4_h:'Right to delete', pr4_p:'The school can fully delete the data at any time.',
+  lp_fin_h:'Let’s grow together!', lp_fin_p:'Create your class in a minute and invite the parents.', lp_fin_btn:'Start for free',
+  ft_mission:'Qonyrau is a platform that brings school and family closer for every child’s success.',
+  ft_c1:'Company', ft_c1a:'About us', ft_c1b:'Team', ft_c1c:'Contact',
+  ft_c2:'Resources', ft_c3:'Support', ft_c3a:'Help center', ft_c3b:'Privacy policy', ft_c3c:'Terms of use',
+  ft_soon:'Soon', ft_bottom:'© 2026 Qonyrau · Kazakh National Women’s Teacher Training University, Department of Informatics · Study project',
+  su_title:'Who are you?', su_t:'Class, points, attendance', su_p:'Your child’s progress and messages', su_s:'Assignments and portfolio', su_l:'Class reports',
+  su_note:'Demo version: you log in right away without signing up.', toSite:'Back to home'
+});
+
 /* ---------- mascot «Сыңғыр» (same artwork as the Figma file) ---------- */
 let _mg = 0;
 function mascot(face='happy', withStar=true){
@@ -106,7 +149,7 @@ function mascot(face='happy', withStar=true){
   let dia=''; for(let i=0;i<8;i++){ const x=62+i*39; dia+=`<path d="M${x} 347 L${x+10} 357 L${x} 367 L${x-10} 357 Z" fill="${CREAM}"/>`; } for(let i=0;i<7;i++) dia+=`<circle cx="${81.5+i*39}" cy="357" r="3.5" fill="${TEAL}"/>`;
   const arm = withStar ? `<path d="M298 248 C322 258 336 262 348 258" stroke="${GOLD2}" stroke-width="20" stroke-linecap="round" fill="none"/><path d="${star(372,250,30,13)}" fill="${TEAL}" stroke="#FFF" stroke-width="4" stroke-linejoin="round"/>`
     : `<path d="M298 248 C318 262 326 282 322 300" stroke="${GOLD2}" stroke-width="20" stroke-linecap="round" fill="none"/>`;
-  return `<svg viewBox="0 0 420 440" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Сыңғыр"><defs><linearGradient id="${id}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFD957"/><stop offset="1" stop-color="#F2A600"/></linearGradient></defs>
+  return `<svg viewBox="0 0 420 440" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="${(typeof S !== 'undefined' && S && S.lang === 'en') ? 'Syngyr' : 'Сыңғыр'}"><defs><linearGradient id="${id}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFD957"/><stop offset="1" stop-color="#F2A600"/></linearGradient></defs>
   <ellipse cx="200" cy="428" rx="125" ry="9" fill="${NAVY}" opacity=".12"/>
   <path d="M304 74 Q326 96 304 118" stroke="${TEAL}" stroke-width="7" fill="none" stroke-linecap="round"/><path d="M324 56 Q358 96 324 136" stroke="${TEAL}" stroke-width="7" fill="none" stroke-linecap="round" opacity=".6"/><path d="M96 74 Q74 96 96 118" stroke="${TEAL}" stroke-width="7" fill="none" stroke-linecap="round"/>
   <circle cx="200" cy="50" r="20" fill="none" stroke="${TEAL}" stroke-width="11"/>
@@ -128,13 +171,14 @@ function lpRoles(){
     .map(([c,r,k,ic])=>`<button class="lp-role ${c}" data-act="enter" data-v="${r}"><span class="ring">${icon(ic,30)}</span>${t(k)}</button>`).join('');
 }
 function renderLanding(){
-  document.documentElement.lang = S.lang==='kk' ? 'kk' : 'ru';
+  document.documentElement.lang = S.lang;
+  document.title = t('brand') + ' — ' + t('tagline');
   const post = [...S.posts].sort((a,b)=>b.ts-a.ts).find(p=>p.img) || S.posts[0];
   const ali = stu('1'), aru = stu('2');
   const lastAward = S.events.filter(e=>e.v>0).sort((a,b)=>b.ts-a.ts)[0];
   const la = lastAward ? {s:stu(lastAward.sid), sk:skill(lastAward.skill), v:lastAward.v, ts:lastAward.ts} : {s:ali, sk:skill('creative'), v:2, ts:Date.now()};
   const tk = dayKey(Date.now()); const day = S.attendance[tk]||{}; const here = S.students.filter(s=>day[s.id] && day[s.id]!=='absent').length;
-  const lang = `<div class="lp-lang" role="group" aria-label="${t('lang')}"><button class="${S.lang==='kk'?'on':''}" data-act="lang" data-v="kk">ҚАЗ</button><button class="${S.lang==='ru'?'on':''}" data-act="lang" data-v="ru">РУС</button></div>`;
+  const lang = `<div class="lp-lang" role="group" aria-label="${t('lang')}"><button class="${S.lang==='kk'?'on':''}" data-act="lang" data-v="kk">ҚАЗ</button><button class="${S.lang==='ru'?'on':''}" data-act="lang" data-v="ru">РУС</button><button class="${S.lang==='en'?'on':''}" data-act="lang" data-v="en">ENG</button></div>`;
 
   // calendar for current month
   const now = new Date(), y=now.getFullYear(), m=now.getMonth(), first=new Date(y,m,1), days=new Date(y,m+1,0).getDate();
@@ -147,12 +191,12 @@ function renderLanding(){
 
   const stripCards = () => `
     <div class="scene w"><img class="bgimg" src="${mazeSVG(7)}" alt=""><span class="cap">${t('sc1')}</span></div>
-    <div class="scene code"><pre><span class="c"># ${S.lang==='kk'?'екі санның қосындысы':'сумма двух чисел'}</span>
+    <div class="scene code"><pre><span class="c"># ${tx('екі санның қосындысы','сумма двух чисел','sum of two numbers')}</span>
 <span class="k">a</span> = int(input())
 <span class="k">b</span> = int(input())
-print(<span class="s">"${S.lang==='kk'?'Жауабы':'Ответ'}:"</span>, a + b)</pre><span class="cap">${t('sc2')}</span></div>
+print(<span class="s">"${tx('Жауабы','Ответ','Answer')}:"</span>, a + b)</pre><span class="cap">${t('sc2')}</span></div>
     <div class="scene pts"><span class="big">+2${icon('bulb',40)}</span><span class="cap">${t('sc3')}</span></div>
-    <div class="scene chat"><div class="msgs"><div class="msg them">${esc(S.lang==='kk'?'Әлихан бүгін досына көп көмектесті!':'Алихан сегодня очень помог другу!')}</div><div class="msg me" style="align-self:flex-end">${esc(t('lp_f2'))}</div></div><span class="cap">${t('sc4')}</span></div>
+    <div class="scene chat"><div class="msgs"><div class="msg them">${esc(tx('Әлихан бүгін досына көп көмектесті!','Алихан сегодня очень помог другу!','Alikhan helped a friend a lot today!'))}</div><div class="msg me" style="align-self:flex-end">${esc(t('lp_f2'))}</div></div><span class="cap">${t('sc4')}</span></div>
     <div class="scene cal"><div class="page"><b>${esc(fmt(thu,{weekday:'long'}))}</b><span>${thu.getDate()}</span><i>18:00</i></div><span class="cap">${t('sc5')}</span></div>
     <div class="scene masc">${mascot('joy',false)}<span class="cap">${t('sc6')}</span></div>
     <div class="scene w" style="background:#FFFDF5"><img class="bgimg" src="${flowSVG()}" alt="" style="object-fit:contain;padding:10px"><span class="cap">${t('sc7')}</span></div>
@@ -164,7 +208,7 @@ print(<span class="s">"${S.lang==='kk'?'Жауабы':'Ответ'}:"</span>, a 
   <div class="lp">
     <header class="lp-head" id="lp-head">
       <div class="lp-wrap">
-        <button class="lp-logo" data-act="toTop" aria-label="Қоңырау">${mascot('happy',false)}<span>Қоңырау</span></button>
+        <button class="lp-logo" data-act="toTop" aria-label="${t('brand')}">${mascot('happy',false)}<span>${t('brand')}</span></button>
         <nav class="lp-nav" aria-label="main">
           <a href="#features" data-act="anchor" data-v="features">${t('lp_teachers')}</a>
           <a href="#privacy" data-act="anchor" data-v="privacy">${t('lp_schools')}</a>
@@ -220,7 +264,7 @@ print(<span class="s">"${S.lang==='kk'?'Жауабы':'Ответ'}:"</span>, a 
         <div class="lp-feat">
           <div class="lp-feat-text"><span class="lp-feat-ic" style="background:var(--primary-soft);color:var(--primary)">${icon('msg',26)}</span><h3 class="lp-h2" style="font-size:clamp(1.6rem,2.6vw,2.2rem)">${t('f1_h')}</h3><p>${t('f1_p')}</p><ul class="lp-ticks">${lpTick(t('f1_t1'))}${lpTick(t('f1_t2'))}${lpTick(t('f1_t3'))}</ul></div>
           <div class="lp-stage teal"><div class="lp-mock"><div class="lp-mock-h">${av(parentObj(aru),34)}<div><b>${esc(aru.parent)}</b><span>${esc(parentLabel(aru))}</span></div></div>
-            <div class="lp-mock-b"><div class="msg them">${esc((S.threads['2']||[])[0]?.text || '')}</div><div class="msg me" style="align-self:flex-end">${esc(S.lang==='kk'?'Түсіндім, рахмет! Аружанды күтеміз.':'Поняла, спасибо! Ждём Аружан.')}<time>${fTime(Date.now())}</time></div>
+            <div class="lp-mock-b"><div class="msg them">${esc((S.threads['2']||[])[0]?.text || '')}</div><div class="msg me" style="align-self:flex-end">${esc(tx('Түсіндім, рахмет! Аружанды күтеміз.','Поняла, спасибо! Ждём Аружан.','Got it, thank you! We will wait for Aruzhan.'))}<time>${fTime(Date.now())}</time></div>
             <div class="tpls" style="margin-top:4px">${['tpl1','tpl2','tpl3'].map(k=>`<button type="button" tabindex="-1">${t(k)}</button>`).join('')}</div></div></div></div>
         </div>
 
@@ -236,7 +280,7 @@ print(<span class="s">"${S.lang==='kk'?'Жауабы':'Ответ'}:"</span>, a 
           <div class="lp-stage coral"><div class="lp-mock" style="max-width:360px"><div class="lp-mock-h"><b style="text-transform:capitalize">${esc(fmt(now,{month:'long', year:'numeric'}))}</b></div>
             <div class="lp-cal">${cal}</div>
             <div class="lp-event"><span class="when">${thu.getDate()}<small>${esc(fmt(thu,{weekday:'short'}))}</small></span><span><b>${t('f3_ev')}</b><span class="small muted" style="display:block">${t('f3_evs')}</span></span></div></div>
-            <span class="lp-tag" style="right:22px;top:22px">${icon('bell',16)}${S.lang==='kk'?'Ертең еске саламыз':'Напомним завтра'}</span></div>
+            <span class="lp-tag" style="right:22px;top:22px">${icon('bell',16)}${tx('Ертең еске саламыз','Напомним завтра','We will remind you tomorrow')}</span></div>
         </div>
 
         <div class="lp-feat flip">
@@ -286,7 +330,7 @@ print(<span class="s">"${S.lang==='kk'?'Жауабы':'Ответ'}:"</span>, a 
     <footer class="lp-foot">
       <div class="lp-wrap">
         <div class="lp-foot-top">
-          <div><span class="lp-logo">${mascot('happy',false)}<span>Қоңырау</span></span><p>${t('ft_mission')}</p>
+          <div><span class="lp-logo">${mascot('happy',false)}<span>${t('brand')}</span></span><p>${t('ft_mission')}</p>
             <div class="lp-stores"><span class="lp-store"><small>${t('ft_soon')}</small>App Store</span><span class="lp-store"><small>${t('ft_soon')}</small>Google Play</span></div></div>
           <div><h4>${t('ft_c1')}</h4><ul><li><a href="#how" data-act="anchor" data-v="how">${t('ft_c1a')}</a></li><li><a href="#how" data-act="anchor" data-v="how">${t('ft_c1b')}</a></li><li><a href="#how" data-act="anchor" data-v="how">${t('ft_c1c')}</a></li></ul></div>
           <div><h4>${t('ft_c2')}</h4><ul><li><a href="#how" data-act="anchor" data-v="how">${t('lp_res1')}</a></li><li><a href="#students" data-act="anchor" data-v="students">${t('lp_res2')}</a></li><li><a href="#features" data-act="anchor" data-v="features">${t('lp_res3')}</a></li></ul></div>
