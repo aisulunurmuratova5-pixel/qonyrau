@@ -1,6 +1,4 @@
-/* =========================================================
-   CALENDAR + AI ASSISTANT
-   ========================================================= */
+
 I.sparkle = '<path d="M12 3l1.8 4.6 4.7 1.9-4.7 1.8L12 16l-1.8-4.7-4.7-1.8 4.7-1.9z"/><path d="M19 15l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8z"/>';
 I.trash = '<path d="M3 6h18M8 6V4h8v2M6 6l1 15h10l1-15"/>';
 NAV.teacher = [['class','grid'],['feed','feed'],['portfolio','image'],['assignments','clip'],['calendar','cal'],['attendance','check2'],['messages','msg'],['reports','chart'],['ai','sparkle']];
@@ -32,10 +30,10 @@ Object.assign(T.kk, {
   ai_task:'Тақырып бойынша тапсырма', ai_taskD:'Тақырыпты жазыңыз — дайын тапсырма мен тексеру критерийлері',
   ai_quiz:'Тест сұрақтары', ai_quizD:'Тақырып немесе мәтін бойынша жауабы бар тест',
   ai_conv:'Мәтіннен тапсырма', ai_convD:'Оқулықтан үзінді қойыңыз — сұрақтар мен тапсырма шығады',
-  ai_tr:'Аудару', ai_trD:'Хабарламаны қазақшадан орысшаға немесе керісінше аудару',
+  ai_tr:'Аудару', ai_trD:'Хабарламаны қазақша, орысша және ағылшынша аудару',
   ai_new:'Жаңа', ai_student:'Оқушы', ai_purpose:'Мақсаты', ai_tone:'Тон', ai_lang:'Тілі', ai_notes:'Қосымша (міндетті емес)', ai_notesPh:'Мысалы: жиналысқа шақыру, бейсенбі 18:00',
   p_praise:'Мақтау', p_hw:'Үй жұмысы туралы', p_absent:'Сабаққа келмеуі', p_meet:'Кездесуге шақыру', p_custom:'Өз тақырыбым',
-  tone_warm:'Жылы', tone_formal:'Ресми', lang_kk:'Қазақша', lang_ru:'Орысша',
+  tone_warm:'Жылы', tone_formal:'Ресми', lang_kk:'Қазақша', lang_ru:'Орысша', lang_en:'Ағылшынша',
   ai_generate:'Жазу', ai_regen:'Қайта жазу', ai_stop:'Тоқтату', ai_thinking:'Сыңғыр ойланып жатыр…', ai_result:'Нәтиже (түзете аласыз)',
   ai_sendChat:'Ата-анаға жіберу', ai_sentChat:'Хабарлама ата-анаға жіберілді', ai_sendAll:'Барлық ата-анаға жіберу', ai_sentAll:'{n} ата-анаға апталық қорытынды жіберілді',
   ai_topic:'Тақырып', ai_topicPh:'Мысалы: Python-дағы for циклі', ai_grade:'Сынып', ai_count:'Сұрақ саны', ai_source:'Мәтін (оқулықтан үзінді)', ai_sourcePh:'Мәтінді осында қойыңыз…',
@@ -73,10 +71,10 @@ Object.assign(T.ru, {
   ai_task:'Задание по теме', ai_taskD:'Напишите тему — получите задание и критерии проверки',
   ai_quiz:'Тестовые вопросы', ai_quizD:'Тест с ответами по теме или тексту',
   ai_conv:'Задание из текста', ai_convD:'Вставьте отрывок из учебника — получите вопросы и задание',
-  ai_tr:'Перевод', ai_trD:'Перевести сообщение с казахского на русский и обратно',
+  ai_tr:'Перевод', ai_trD:'Перевести сообщение между казахским, русским и английским',
   ai_new:'Новое', ai_student:'Ученик', ai_purpose:'Цель', ai_tone:'Тон', ai_lang:'Язык', ai_notes:'Дополнительно (необязательно)', ai_notesPh:'Например: пригласить на собрание, четверг 18:00',
   p_praise:'Похвала', p_hw:'О домашнем задании', p_absent:'Пропуск урока', p_meet:'Приглашение на встречу', p_custom:'Своя тема',
-  tone_warm:'Тёплый', tone_formal:'Официальный', lang_kk:'Казахский', lang_ru:'Русский',
+  tone_warm:'Тёплый', tone_formal:'Официальный', lang_kk:'Казахский', lang_ru:'Русский', lang_en:'Английский',
   ai_generate:'Написать', ai_regen:'Переписать', ai_stop:'Остановить', ai_thinking:'Сыңғыр думает…', ai_result:'Результат (можно исправить)',
   ai_sendChat:'Отправить родителю', ai_sentChat:'Сообщение отправлено родителю', ai_sendAll:'Отправить всем родителям', ai_sentAll:'Итоги недели отправлены {n} родителям',
   ai_topic:'Тема', ai_topicPh:'Например: цикл for в Python', ai_grade:'Класс', ai_count:'Кол-во вопросов', ai_source:'Текст (отрывок из учебника)', ai_sourcePh:'Вставьте текст сюда…',
@@ -90,20 +88,63 @@ Object.assign(T.ru, {
   e_generic:'Связь прервалась. Попробуйте ещё раз.', e_bad_key:'API-ключ неверный или не задан. Проверьте файл .env и перезапустите сервер.', ai_answer:'Ответ', ai_explain:'Пояснение', ai_criteria:'Критерии оценки', ai_steps:'Шаги выполнения'
 });
 
+Object.assign(T.en, {
+  nav_calendar:'Calendar', nav_ai:'AI assistant',
+  cal_today:'Today', cal_none:'No events today', cal_allNote:'All events of the selected month are shown.', cal_create:'Create event',
+  cal_new:'New class event', cal_title:'Title', cal_titlePh:'For example: parents’ meeting', cal_cover:'Cover',
+  cal_start:'Starts', cal_end:'Ends', cal_allDay:'All day', cal_desc:'Description (optional)', cal_descPh:'Who, what, when, where',
+  cal_reg:'Sign-up slots', cal_regHint:'Open slots for one-to-one meetings, parent helpers and volunteers.',
+  cal_regAiPh:'Tell Syngyr which slots you need: for example, “6 meetings of 15 minutes from 18:00”',
+  cal_preset1:'One-to-one meetings', cal_preset2:'Parent helpers', cal_preset3:'Volunteers', cal_preset4:'Food for the table',
+  cal_addSlot:'Add slot', cal_slotPh:'Slot name', cal_cap:'Places',
+  cal_rem:'Reminders', cal_remHint:'Remind families about the event automatically',
+  rem_now:'Send now', rem_5d:'5 days before', rem_1d:'1 day before', rem_1h:'1 hour before',
+  cal_feed:'Post in the class feed', cal_feedHint:'A post about the event will appear in the feed',
+  cal_created:'Event created', cal_deleted:'Event deleted', cal_delete:'Delete', cal_deleteSure:'Yes, delete',
+  cal_signup:'Sign up', cal_signed:'You signed up', cal_cancelSign:'Cancel', cal_full:'Full', cal_signedToast:'You signed up for “{slot}”',
+  cal_due:'Assignment due', cal_remindMsg:'Reminder: {title} — {when}.', cal_feedPost:'New event: {title}\n{when}',
+  cal_needTitle:'Write the event title', cal_badTime:'The end time must be after the start time',
+  n_reminder:'Reminder: “{title}” {when}', n_signup:'{name} signed up for “{slot}”', cal_next:'Next event', cal_open:'Open',
+  cov_fest:'Holiday', cov_meet:'Meeting', cov_trip:'Trip', cov_star:'Success',
+  ai_title:'AI assistant', ai_sub:'Syngyr helps you write messages, prepare a weekly summary and create tasks for your lessons. You can always check and edit the result before sending it.',
+  ai_sec1:'Talking with parents', ai_sec2:'Lesson materials', ai_sec3:'Language',
+  ai_msg:'Message to a parent', ai_msgD:'A draft based on the student’s data for this week',
+  ai_week:'Weekly summary', ai_weekD:'A short report about each child for their parent',
+  ai_task:'Task on a topic', ai_taskD:'Write a topic — get a ready task and assessment criteria',
+  ai_quiz:'Quiz questions', ai_quizD:'A quiz with answers on a topic or a text',
+  ai_conv:'Task from a text', ai_convD:'Paste a part of a textbook — get questions and a task',
+  ai_tr:'Translate', ai_trD:'Translate a message between Kazakh, Russian and English',
+  ai_new:'New', ai_student:'Student', ai_purpose:'Purpose', ai_tone:'Tone', ai_lang:'Language', ai_notes:'Extra details (optional)', ai_notesPh:'For example: invite to the meeting, Thursday 18:00',
+  p_praise:'Praise', p_hw:'About homework', p_absent:'Missed lessons', p_meet:'Invite to a meeting', p_custom:'My own topic',
+  tone_warm:'Warm', tone_formal:'Formal', lang_kk:'Kazakh', lang_ru:'Russian', lang_en:'English',
+  ai_generate:'Write', ai_regen:'Write again', ai_stop:'Stop', ai_thinking:'Syngyr is thinking…', ai_result:'Result (you can edit it)',
+  ai_sendChat:'Send to parent', ai_sentChat:'Message sent to the parent', ai_sendAll:'Send to all parents', ai_sentAll:'Weekly summary sent to {n} parents',
+  ai_topic:'Topic', ai_topicPh:'For example: the for loop in Python', ai_grade:'Grade', ai_count:'Number of questions', ai_source:'Text (from a textbook)', ai_sourcePh:'Paste the text here…',
+  ai_saveAsg:'Save as an assignment', ai_savedAsg:'The task was added to “Assignments”', ai_copy:'Copy', ai_copied:'Copied',
+  ai_from:'Translate', ai_text:'Text', ai_textPh:'Text to translate…',
+  ai_off:'AI is not connected (start server.js with an API key as described in README). A ready template was used for the message and the weekly summary.',
+  ai_offShort:'AI is not connected: start server.js with an API key and open the site at http://localhost:3000.',
+  ai_template:'Written from a template', ai_draftReply:'Let Syngyr draft a reply',
+  e_not_granted:'Access to AI was not allowed. You can turn it on in the page settings.', e_rate_limited:'Too many requests. Please try again a little later.',
+  e_refused:'Syngyr could not answer this request. Try to change it.', e_invalid_json:'The answer came in the wrong format. Press “Write again”.',
+  e_generic:'The connection was lost. Please try again.', e_bad_key:'The API key is wrong or missing. Check the .env file and restart the server.', ai_answer:'Answer', ai_explain:'Explanation', ai_criteria:'Assessment criteria', ai_steps:'Steps'
+});
+
 /* ---------- calendar data ---------- */
-function seedCal(){
+function seedCal(lang){
+  if (lang === undefined) lang = isEnContent() ? 'en' : 'kk';
   const now = Date.now(), d = new Date(now); d.setHours(0,0,0,0);
   do { d.setDate(d.getDate()+1); } while (d.getDay()!==4);
   const thu = d.getTime();
   const trip = startOfDay(now + 15*DAY);
   const slots = []; for (let i=0;i<6;i++){ const m = 18*60 + i*15; slots.push({id:uid(), label:`${pad(Math.floor(m/60))}:${pad(m%60)}–${pad(Math.floor((m+15)/60))}:${pad((m+15)%60)}`, cap:1, taken: i===1?['5']:[]}); }
   return [
-    {id:uid(), title:{kk:'Ата-аналар жиналысы', ru:'Родительское собрание'}, cover:'meet', start:thu+18*36e5, end:thu+19*36e5, allDay:false,
-     desc:{kk:'Информатика кабинеті (214). Тақырып — балалардың цифрлық қауіпсіздігі. Жиналыстан кейін жеке кездесулерге жазылуға болады.', ru:'Кабинет информатики (214). Тема — цифровая безопасность детей. После собрания можно записаться на личную встречу.'},
+    {id:uid(), title:{kk:'Ата-аналар жиналысы', ru:'Родительское собрание', en:'Parents’ meeting'}, cover:'meet', start:thu+18*36e5, end:thu+19*36e5, allDay:false,
+     desc:{kk:'Информатика кабинеті (214). Тақырып — балалардың цифрлық қауіпсіздігі. Жиналыстан кейін жеке кездесулерге жазылуға болады.', ru:'Кабинет информатики (214). Тема — цифровая безопасность детей. После собрания можно записаться на личную встречу.', en:'Informatics room (214). Topic: children’s digital safety. After the meeting you can sign up for a one-to-one talk.'},
      slots, reminders:['1d','1h'], toFeed:true, created: now - 2*DAY},
-    {id:uid(), title:{kk:'Ғылым мұражайына саяхат', ru:'Поездка в музей науки'}, cover:'trip', start:trip, end:trip+DAY-1, allDay:true,
-     desc:{kk:'Сынып мақсатына жеткенде барамыз! Автобус мектептен 9:00-де шығады.', ru:'Едем, когда класс достигнет цели! Автобус отправляется от школы в 9:00.'},
-     slots:[{id:uid(), label:{kk:'Еріп жүретін ата-ана', ru:'Сопровождающий родитель'}, cap:3, taken:['9']}], reminders:['5d','1d'], toFeed:false, created: now - DAY}
+    {id:uid(), title:{kk:'Ғылым мұражайына саяхат', ru:'Поездка в музей науки', en:'Trip to the Science Museum'}, cover:'trip', start:trip, end:trip+DAY-1, allDay:true,
+     desc:{kk:'Сынып мақсатына жеткенде барамыз! Автобус мектептен 9:00-де шығады.', ru:'Едем, когда класс достигнет цели! Автобус отправляется от школы в 9:00.', en:'We go when the class reaches its goal! The bus leaves the school at 9:00.'},
+     slots:[{id:uid(), label:{kk:'Еріп жүретін ата-ана', ru:'Сопровождающий родитель', en:'Parent helper'}, cap:3, taken:['9']}], reminders:['5d','1d'], toFeed:false, created: now - DAY}
   ];
 }
 const COVERS = ['fest','meet','trip','star'];
@@ -249,6 +290,7 @@ function factsText(f){
   return `Student: ${f.s.first} ${f.s.last}\nParent: ${f.s.parent} (${f.s.rel==='m'?'mother':'father'})\nPoints in last 7 days: ${f.pts}\nPraised for: ${list(f.pos)}\nNeeds work on: ${list(f.neg)}\nTeacher notes: ${f.notes.join('; ')||'—'}\nAttendance last 7 days: present ${f.present}, late ${f.late}, absent ${f.absent}\nAssignments: ${f.asg.join(' | ')}\nNew portfolio work: ${f.works.join(', ')||'—'}`;
 }
 function templateMsg(f, purpose, lang){
+  if (lang==='en') return templateMsgEn(f, purpose);
   const kk = lang==='kk', n = f.s.first, top = Object.keys(f.pos)[0];
   const hi = kk ? `Сәлеметсіз бе, ${f.s.parent}!` : `Здравствуйте, ${f.s.parent}!`;
   const sign = kk ? `\n\nҚұрметпен, ${S.cls.teacher}` : `\n\nС уважением, ${S.cls.teacher}`;
@@ -262,12 +304,29 @@ function templateMsg(f, purpose, lang){
   return `${hi} ${body}${sign}`;
 }
 function templateWeek(f, lang){
+  if (lang==='en') return templateWeekEn(f);
   const kk = lang==='kk', top = Object.keys(f.pos).slice(0,2).join(', ');
   return kk ? `Сәлеметсіз бе, ${f.s.parent}! ${f.s.first} аптасының қорытындысы: ${f.pts>0?'+'+f.pts:f.pts} ұпай${top?` (${top})`:''}, қатысу — ${f.present+f.late} күн, тапсырмалар: ${f.asg.join('; ')}. Рахмет! ${S.cls.teacher}`
     : `Здравствуйте, ${f.s.parent}! Итоги недели ${f.s.first}: ${f.pts>0?'+'+f.pts:f.pts} баллов${top?` (${top})`:''}, посещаемость — ${f.present+f.late} дн., задания: ${f.asg.join('; ')}. Спасибо! ${S.cls.teacher}`;
 }
+// Ағылшынша үлгілер (ЖИ қосылмаған кезде)
+function templateMsgEn(f, purpose){
+  const n = f.s.first, top = Object.keys(f.pos)[0], p = f.pts>0 ? '+'+f.pts : f.pts;
+  const body = {
+    praise: `${n} got ${p} points this week${top?`, especially for “${top}”`:''}. Please praise them at home too!`,
+    hw: `Here is how ${n} is doing with assignments: ${f.asg.join('; ')}. Please check at home.`,
+    absent: `${n} missed ${f.absent} lesson(s) this week. Please let me know the reason, and I will help them catch up.`,
+    meet: `Do you have time for a short talk about ${n}? Please write a time that is good for you.`,
+    custom: `I am writing to you about ${n}.`
+  }[purpose];
+  return `Hello, ${f.s.parent}! ${body}\n\nBest regards, ${S.cls.teacher}`;
+}
+function templateWeekEn(f){
+  const top = Object.keys(f.pos).slice(0,2).join(', '), p = f.pts>0 ? '+'+f.pts : f.pts;
+  return `Hello, ${f.s.parent}! ${f.s.first}'s week: ${p} points${top?` (${top})`:''}, attended ${f.present+f.late} day(s), assignments: ${f.asg.join('; ')}. Thank you! ${S.cls.teacher}`;
+}
 const AI_RULES = `Rules: you help a school informatics teacher in Kazakhstan (class 7 «А»). Be warm, specific and brief. Mention only facts given below; never invent grades, events or diagnoses; never compare the child with classmates; no emojis; no subject line; no quotation marks around the whole text.`;
-const langName = l => l==='kk' ? 'Kazakh (Cyrillic)' : 'Russian';
+const langName = l => l==='kk' ? 'Kazakh (Cyrillic)' : l==='en' ? 'English' : 'Russian';
 
 const AI_TOOLS = [
   ['msg','msg','sec1'],['week','cal','sec1'],
@@ -285,13 +344,13 @@ function aiForm(k){
   const f = ui.ai.form;
   const sel = (key, opts, label) => `<div class="field"><label for="aif-${key}">${label}</label><select class="select" id="aif-${key}" data-aif="${key}">${opts.map(([v,l])=>`<option value="${v}" ${f[key]===v?'selected':''}>${esc(l)}</option>`).join('')}</select></div>`;
   const stuOpts = (all) => (all?[['all',t('allStudents')]]:[]).concat(S.students.map(s=>[s.id, fullName(s)]));
-  const langOpts = [['kk',t('lang_kk')],['ru',t('lang_ru')]];
+  const langOpts = [['kk',t('lang_kk')],['ru',t('lang_ru')],['en',t('lang_en')]];
   if (k==='msg') return `<div class="ai-form">${sel('sid', stuOpts(false), t('ai_student'))}${sel('purpose', ['praise','hw','absent','meet','custom'].map(p=>[p,t('p_'+p)]), t('ai_purpose'))}${sel('tone', [['warm',t('tone_warm')],['formal',t('tone_formal')]], t('ai_tone'))}${sel('lang', langOpts, t('ai_lang'))}</div><div class="field"><label for="aif-notes">${t('ai_notes')}</label><input class="input" id="aif-notes" data-aif="notes" value="${esc(f.notes||'')}" placeholder="${t('ai_notesPh')}"></div>`;
   if (k==='week') return `<div class="ai-form">${sel('sid', stuOpts(true), t('ai_student'))}${sel('lang', langOpts, t('ai_lang'))}</div>`;
   if (k==='task') return `<div class="field"><label for="aif-topic">${t('ai_topic')}</label><input class="input" id="aif-topic" data-aif="topic" value="${esc(f.topic||'')}" placeholder="${t('ai_topicPh')}"></div><div class="ai-form">${sel('grade', [5,6,7,8,9,10,11].map(g=>[String(g),String(g)]), t('ai_grade'))}${sel('lang', langOpts, t('ai_lang'))}</div>`;
   if (k==='quiz') return `<div class="field"><label for="aif-topic">${t('ai_topic')}</label><input class="input" id="aif-topic" data-aif="topic" value="${esc(f.topic||'')}" placeholder="${t('ai_topicPh')}"></div><div class="ai-form">${sel('count', ['3','5','8','10'].map(n=>[n,n]), t('ai_count'))}${sel('grade', [5,6,7,8,9,10,11].map(g=>[String(g),String(g)]), t('ai_grade'))}${sel('lang', langOpts, t('ai_lang'))}</div>`;
   if (k==='conv') return `<div class="field"><label for="aif-source">${t('ai_source')}</label><textarea class="textarea" id="aif-source" data-aif="source" placeholder="${t('ai_sourcePh')}" style="min-height:140px">${esc(f.source||'')}</textarea></div><div class="ai-form">${sel('grade', [5,6,7,8,9,10,11].map(g=>[String(g),String(g)]), t('ai_grade'))}${sel('lang', langOpts, t('ai_lang'))}</div>`;
-  if (k==='tr') return `<div class="ai-form">${sel('from', [['kk',t('lang_kk')+' → '+t('lang_ru')],['ru',t('lang_ru')+' → '+t('lang_kk')]], t('ai_from'))}</div><div class="field"><label for="aif-text">${t('ai_text')}</label><textarea class="textarea" id="aif-text" data-aif="text" placeholder="${t('ai_textPh')}" style="min-height:110px">${esc(f.text||'')}</textarea></div>`;
+  if (k==='tr') return `<div class="ai-form">${sel('from', [['kk',t('lang_kk')+' → '+t('lang_ru')],['ru',t('lang_ru')+' → '+t('lang_kk')],['kk-en',t('lang_kk')+' → '+t('lang_en')],['en-kk',t('lang_en')+' → '+t('lang_kk')]], t('ai_from'))}</div><div class="field"><label for="aif-text">${t('ai_text')}</label><textarea class="textarea" id="aif-text" data-aif="text" placeholder="${t('ai_textPh')}" style="min-height:110px">${esc(f.text||'')}</textarea></div>`;
   return '';
 }
 function aiOutput(k){
@@ -359,7 +418,7 @@ async function aiRun(){
       ui.ai.data = Array.isArray(res) ? res.filter(q=>q && q.q && Array.isArray(q.options)) : [];
       if (!ui.ai.data.length) throw {code:'invalid_json'};
     } else if (k==='tr'){
-      const to = (f.from||'kk')==='kk' ? 'Russian' : 'Kazakh (Cyrillic)';
+      const to = { kk:'Russian', ru:'Kazakh (Cyrillic)', 'kk-en':'English', 'en-kk':'Kazakh (Cyrillic)' }[f.from||'kk'] || 'Russian';
       const prompt = `Translate this school message for parents into ${to}. Keep the meaning, names and polite tone; natural wording a teacher in Kazakhstan would use. Return only the translation.\n\n${(f.text||'').slice(0,8000)}`;
       ui.ai.out = '';
       await AI(prompt, { signal: ctl.signal, modelTier:'quick', onText: ({text}) => { ui.ai.out = text; const o=document.getElementById('ai-out'); if (o) o.value = text; else renderModal(); } });
@@ -384,9 +443,9 @@ Object.assign(A, {
   slotPreset(el){
     const d = ui.calDraft, v = el.dataset.v, kk = S.lang==='kk';
     if (v==='1'){ const [h,mm] = (d.st||'17:00').split(':').map(Number); for (let i=0;i<6;i++){ const a=h*60+mm+i*15, b=a+15; d.slots.push({id:uid(), label:`${pad(Math.floor(a/60)%24)}:${pad(a%60)}–${pad(Math.floor(b/60)%24)}:${pad(b%60)}`, cap:1, taken:[]}); } }
-    if (v==='2') d.slots.push({id:uid(), label: kk?'Еріп жүретін ата-ана':'Сопровождающий родитель', cap:3, taken:[]});
-    if (v==='3') d.slots.push({id:uid(), label: kk?'Ерікті көмекші':'Волонтёр', cap:4, taken:[]});
-    if (v==='4') ['Бауырсақ','Шай мен тәтті','Жеміс'].forEach(x=>d.slots.push({id:uid(), label:x, cap:2, taken:[]}));
+    if (v==='2') d.slots.push({id:uid(), label: tx('Еріп жүретін ата-ана','Сопровождающий родитель','Parent helper'), cap:3, taken:[]});
+    if (v==='3') d.slots.push({id:uid(), label: tx('Ерікті көмекші','Волонтёр','Volunteer'), cap:4, taken:[]});
+    if (v==='4') (S.lang==='en' ? ['Baursak','Tea and sweets','Fruit'] : ['Бауырсақ','Шай мен тәтті','Жеміс']).forEach(x=>d.slots.push({id:uid(), label:x, cap:2, taken:[]}));
     renderModal();
   },
   async slotAi(){
