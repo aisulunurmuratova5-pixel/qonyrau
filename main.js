@@ -1,5 +1,8 @@
-/* ---------- boot ---------- */
-S = load() || seed();
-if (!S.v) S = seed();
-if (!S.calEvents){ S.calEvents = seedCal(); save(); }
+
+const firstLang = startLang();                      а
+S = load(firstLang) || seed(firstLang);
+if (!S.v) S = seed(firstLang);
+if (!S.calEvents) S.calEvents = seedCal(firstLang);
+S.lang = firstLang;
+save();
 render();
